@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- WEB ICON -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- TITLE -->
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="splitter">spli<br>tter</h1>
+    <div class="card">
+
+      <div class="calculations">
+        <div class="bill section">
+          <h1 class="section-name-text">Bill</h1>
+          <input class="input input-signal dollar-sign" type="number">
+        </div>
+
+        <div class="tip-selector section">
+          <h1 class="section-name-text">Select Tip %</h1>
+          <div class="tip-buttons">
+            <button class="pecentage tip-percent">5%</button>
+            <button class="pecentage tip-percent">10%</button>
+            <button class="pecentage tip-percent">15%</button>
+            <button class="pecentage tip-percent">25%</button>
+            <button class="pecentage tip-percent">50%</button>
+            <input type="text" name="custom" class="pecentage custom input-signal" placeholder="Custom">
+          </div>
+
+        </div>
+
+        <div class="num-of-people section">
+          <h1 class="section-name-text">Number of People</h1>
+          <input class="input input-signal person-sign" type="number">
+        </div>
+      </div>
+
+      <div class="total-amount">
+        <div class="counters">
+          <div class="tip-amount row">
+            <div class="text">
+              <h1>Tip Amount</h1>
+              <p>/ person</p>
+            </div>
+            <p class="result">$0.00</p>
+          </div>
+          <div class="total row">
+            <div class="text">
+              <h1>Total</h1>
+              <p>/ person</p>
+            </div>
+            <p class="result">$0.00</p>
+          </div>
+        </div>
+      
+        <button type="reset" class="reset-button">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/karina4840" target="_blank">Karina I</a>.
+  </div>
+</body>
+
+</html>
