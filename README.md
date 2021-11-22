@@ -42,12 +42,10 @@
 This is a solution to the [Tip calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
                                                           
 ### Screenshot
-- Mobile <br>
-  <img src="#" width=210 height=400> 
 - Desktop <br>
-   <img src="#" width=400>  
+   <img src="https://github.com/karina4840/tip-calculator/blob/main/images/desktop-preview.jpg?raw=true" width=400>  
 - Active elements <br>
-   <img src="#" width=400>
+   <img src="https://github.com/karina4840/tip-calculator/blob/main/images/active-states.jpg?raw=true" width=400>
 
 ### Built with
 - Semantic HTML5 markup
