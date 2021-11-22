@@ -1,22 +1,37 @@
-const billInput = document.querySelector(".bill-input");
+//----- VARIABLES FOR INPUTS AND TIPS -----//
+const billInput = document.querySelector(".bill-input"); 
 const peopleInput = document.querySelector(".people-input");
 const tips = document.querySelectorAll(".tips");
+const tipCustom = document.querySelector(".tip-custom");
+
+
+//----- VARIABLES FOR OUTPUTS -----//
 const tipPerPerson = document.getElementById("tip-amount");
 const totalPerPerson = document.getElementById("total-amount");
 const resetBtn = document.querySelector(".reset");
-const tipCustom = document.querySelector(".tip-custom");
+
+
+//----- ERROR MESSAGE AND BORDER -----//
 const error = document.querySelector(".error");
 
-billInput.addEventListener("input", billInputFun);
-peopleInput.addEventListener("input", peopleInputFun);
-tips.forEach(function (val) {
-  val.addEventListener("click", handleClick);
-});
-resetBtn.addEventListener("click", reset);
-tipCustom.addEventListener("input", tipInputFun);
 
-billInput.value = "0.0";
-peopleInput.value = "1";
+//----- FUNCTION CALLERS -----//
+billInput.addEventListener("input", billInputFunction);
+peopleInput.addEventListener("input", peopleInputFunction);
+
+
+tips.forEach(function (button) {
+  button.addEventListener("click", handleClick);
+});
+
+
+//----- CUSTOM TIP -----//
+tipCustom.addEventListener("input", tipInputFunction);
+//----- RESET BUTTON -----//
+resetBtn.addEventListener("click", reset);
+
+ 
+//----- CHANGING VALUES FOR RESULTS -----//
 tipPerPerson.innerHTML = "$" + (0.0).toFixed(2);
 totalPerPerson.innerHTML = "$" + (0.0).toFixed(2);
 
@@ -24,39 +39,50 @@ let billValue = 0.0;
 let peopleValue = 1;
 let tipValue = 0.15;
 
-function billInputFun() {
+
+//----- FUNCTIONS -----//
+function billInputFunction() {
   billValue = parseFloat(billInput.value);
+
+  if (billValue == 0) {
+    error.style.display = "flex";
+    billInput.style.border = "2px solid rgb(218, 88, 88)";
+  } else {
+    error.style.display = "none";
+    billInput.style.border = "2px solid hsl(172, 67%, 45%)"
+  }
   calculateTip();
 }
 
-function tipInputFun() {
-  tipValue = parseFloat(tipCustom.value / 100);
+function tipInputFunction() {
+  tipValue = parseFloat(tipCustom.value / 100); // CUSTOM TIP
 
   tips.forEach(function (val) {
-    val.classList.remove("active-tip");
+    val.classList.remove("active-tip");  // REMOVE ACTIVE BG-COLOR 
   });
   calculateTip();
 }
 
-function peopleInputFun() {
+function peopleInputFunction() {
   peopleValue = parseFloat(peopleInput.value);
 
   if (peopleValue < 1) {
     error.style.display = "flex";
-    peopleInput.style.border = "thick solid red";
+    peopleInput.style.border = "2px solid rgb(218, 88, 88)";
   } else {
     error.style.display = "none";
-    peopleInput.style.border = "none";
+    peopleInput.style.border = "2px solid hsl(172, 67%, 45%)";
     calculateTip();
   }
 }
 
 function handleClick(event) {
-  tips.forEach(function (val) {
-    val.classList.remove("active-tip");
-    if (event.target.innerHTML == val.innerHTML) {
-      val.classList.add("active-tip");
-      tipValue = parseFloat(val.innerHTML) / 100;
+  tips.forEach(function (button) {
+    button.classList.remove("active-tip");
+
+    if (event.target.innerHTML == button.innerHTML) {
+      button.classList.add("active-tip");
+      tipValue = parseFloat(button.innerHTML) / 100;
     }
   });
   calculateTip();
@@ -64,17 +90,21 @@ function handleClick(event) {
 
 function calculateTip() {
   if (peopleValue >= 1) {
-    let tipAmount = (billValue * tipValue) / peopleValue;
-    let total = (billValue + tipAmount) / peopleValue;
-    tipPerPerson.innerHTML = "$" + tipAmount.toFixed(2);
+    let tipAmountPerson = (billValue * tipValue) / peopleValue; // tip per person
+
+    let tipAmount = billValue * tipValue; // total of tip
+    let total = (billValue + tipAmount) / peopleValue; // total of bill
+
+    tipPerPerson.innerHTML = "$" + tipAmountPerson.toFixed(2);
     totalPerPerson.innerHTML = "$" + total.toFixed(2);
   }
 }
 
+// RESET FUNCTION, SETS VALUES TO 0
 function reset() {
-  billInput.value = "0.0";
+  billInput.value = "";
   billInputFun();
-  peopleInput.value = "1";
+  peopleInput.value = "";
   peopleInputFun();
   tipCustom.value = "";
 }

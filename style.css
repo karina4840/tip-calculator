@@ -1,38 +1,52 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  height: 100vh;
-  width: 100%;
+  height: 100%;
   background-color: hsl(185, 41%, 84%);
   font-family: "Space Mono", monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .logo {
   text-align: center;
-  margin-top: 1.7rem;
-  margin-bottom: 2.3rem;
+  margin: 2.3rem 0;
 }
 
 .tip-calculator {
   background-color: white;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  border-radius: 1.4rem 1.4rem 0 0;
+  justify-content: center;
+  margin: auto;
+  padding: 7%;
+  border-radius: 20px;
+}
+
+.section-inputs {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
 }
 
 label {
   color: hsl(186, 14%, 43%);
   font-weight: 700;
   margin-bottom: 0.3rem;
+  width: fit-content;
 }
 
 input {
-  border: none;
-  outline: none;
+  width: 100%;
+  border-radius: 5px;
+  border: solid 2px;
+  border-color: hsl(189, 41%, 97%);
   padding: 5px;
   padding-right: 18px;
   background-position: 17px 15px;
@@ -41,8 +55,12 @@ input {
   text-align: right;
   font-size: 24px;
   color: hsl(183, 100%, 15%);
-  font-weight: bolder;
+  font-weight: 700;
   font-family: "Space Mono", monospace;
+}
+
+input:focus {
+  border-color: hsl(172, 67%, 45%);
 }
 
 .bill-input {
@@ -50,34 +68,50 @@ input {
 }
 
 .bill-input {
-  margin-bottom: 36px;
+  margin-bottom: 35px;
 }
 
 .tip {
   margin-top: 0.7rem;
-  display: grid;
-  grid-template-columns: 144px 144px;
-  row-gap: 2em;
-  column-gap: 18px;
-  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 35px;
 }
 
 .tips {
+  width: 45%;
   background-color: hsl(183, 100%, 15%);
   color: white;
-  height: 48px;
+  padding: 1% 2%;
+  margin-bottom: 5%;
   display: flex;
+  flex-direction: column;
+  text-align: center;
   justify-content: center;
-  align-items: center;
-  font-size: 24px;
+  font-size: 27px;
+  font-weight: 700;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.tips:hover {
+  background-color: rgb(129, 219, 215);
+  color: hsl(183, 100%, 15%);
 }
 
 .active-tip {
   color: hsl(183, 100%, 15%);
   background-color: hsl(172, 67%, 45%);
   font-weight: bolder;
+}
+
+.labels-people,
+.labels-bill{ 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .people-input {
@@ -123,82 +157,93 @@ input {
   cursor: pointer;
 }
 
+.reset:hover {
+  background-color: rgb(129, 219, 215);
+}
+
+#tip-custom {
+  width: 45%;
+}
+
 #tip-custom input {
   box-sizing: border-box;
   width: 100%;
 }
 
-.peopleLabel {
+.people {
   display: flex;
   justify-content: space-between;
 }
 
 .error {
-  color: red;
+  color: rgb(218, 88, 88);
   display: none;
 }
 
-@media only screen and (min-width: 1000px) {
+
+
+@media only screen and (min-width: 1175px) {
   body {
     display: flex;
-    flex-direction: column;
     align-items: center;
   }
 
   input {
-    width: 415px;
+    width: 100%;
     padding: 9px;
     background-position: 17px 18px;
+    border-radius: 5px;
   }
 
   .tip-calculator {
-    width: 990px;
+    width: 70%;
     flex-direction: row;
-    border-radius: 1.4rem;
-    padding: 2.3rem;
-    height: 479px;
+    justify-content: space-between;
+    border-radius: 20px;
+    padding: 2rem;
   }
 
-  .partOne {
-    margin-top: 1rem;
-    margin-left: 1.2rem;
+  .inputs {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
   }
 
   .bill-input {
-    margin-bottom: 3.4rem;
+    margin-bottom: 3rem;
   }
 
   .tip {
     grid-template-columns: 135px 135px 135px;
     row-gap: 1.2em;
     column-gap: 17px;
-    margin-bottom: 3.2rem;
+    margin-bottom: 3rem;
   }
 
   .tips {
-    height: 55px;
+    width: 30%;
+    padding: 2%;
+    margin-bottom: 1%;
   }
 
-  .partOne {
-    display: flex;
-    flex-direction: column;
+  #tip-custom {
+    width: 30%;
   }
 
   .result {
-    margin-left: auto;
-    width: 400px;
+    width: 45%;
     display: flex;
     flex-direction: column;
     align-content: space-between;
-    padding: 48px 38px;
+    margin-left: auto;
   }
 
   .amount {
-    font-size: 55px;
+    font-size: 50px;
   }
 
   .reset {
-    padding: 13px 0 13px 0;
+    padding: 13px 0;
     margin-top: auto;
   }
 }
