@@ -7,7 +7,7 @@
 
 <div align="center">
   <h3>
-    <a href="#> Live site </a>
+    <a href="https://karina4840.github.io/tip-calculator/"> Live Site </a>
     <span> | </span>
     <a href="https://www.frontendmentor.io/solutions/tip-calculator-app-challenge-html-css-js-KvTemCzIq"> Solution </a>
     <span> | </span>
@@ -44,9 +44,10 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 ### Screenshot
 - Desktop <br>
    <img src="https://github.com/karina4840/tip-calculator/blob/main/images/desktop-preview.jpg?raw=true" width=400>  
-- Desktop <br>
-<img src="https://github.com/karina4840/tip-calculator/blob/main/images/mobile-design.jpg?raw=true" height=500>                                                  - Active elements <br>
-   <img src="https://github.com/karina4840/tip-calculator/blob/main/images/active-states.jpg?raw=true" width=400>
+- Mobile <br>
+  <img src="https://github.com/karina4840/tip-calculator/blob/main/images/mobile-design.jpg?raw=true" height=500>
+- Active elements <br>
+  <img src="https://github.com/karina4840/tip-calculator/blob/main/images/active-states.jpg?raw=true" width=400>
 
 ### Built with
 - Semantic HTML5 markup
