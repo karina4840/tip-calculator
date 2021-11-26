@@ -9,9 +9,9 @@
   <h3>
     <a href="#> Live site </a>
     <span> | </span>
-    <a href="#"> Solution </a>
+    <a href="https://www.frontendmentor.io/solutions/tip-calculator-app-challenge-html-css-js-KvTemCzIq"> Solution </a>
     <span> | </span>
-    <a href="#"> Challenge </a>
+    <a href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX"> Challenge </a>
     <br>
   </h3>                                                             
 </div>
